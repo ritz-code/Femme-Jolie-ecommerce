@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import StripeCheckout from 'react-stripe-checkout';
 import Stripe from 'stripe';
+import Image from 'next/image'
 
 const Cart = ({ error, products }) => {
  
@@ -54,7 +55,10 @@ const Cart = ({ error, products }) => {
         {cartProducts.map(item => {
           return (
             <div className="cart-items" key={item._id}>
-              <img src={item.product.mediaUrl} />
+              <Image 
+                src={item.product.mediaUrl} 
+                alt="Beautiful clothing"
+              />
               <div className="cart-details">
                 <div className="product-name">{item.product.name}</div>
                 <h6>{item.quantity} x ${item.product.price}</h6>

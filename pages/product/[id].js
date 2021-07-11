@@ -5,6 +5,7 @@ import { parseCookies } from 'nookies'
 import cookie2 from 'js-cookie'
 import { ToastContainer, toast } from 'react-toastify'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Product = ({ product }) => {
     const [quantity, setQuantity] = useState(1)
@@ -56,7 +57,10 @@ const Product = ({ product }) => {
             <div className="container-product" key={product._id}>
 
                 <div className="product-image-div">
-                    <img src={product.mediaUrl} />
+                    <Image 
+                        src={product.mediaUrl} 
+                        alt="Clothing or art?"
+                    />
                 </div>
 
                 <div className="product-details">
@@ -73,7 +77,7 @@ const Product = ({ product }) => {
                         onChange={(e) => setQuantity(Number(e.target.value))}
                     />
                     <button className="btn add-btn" onClick={() => AddToCart()}>
-                        <i class="fas fa-shopping-bag"></i>  Add to Cart
+                        <i className="fas fa-shopping-bag"></i>  Add to Cart
                 </button>
                     <ToastContainer draggable={false} autoClose={2000} />
                     <Link href="/"><a><h5>Continue shopping</h5></a></Link>

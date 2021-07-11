@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import baseUrl from '../helpers/baseUrl'
 import { useRouter } from 'next/router'
 import cookie from 'js-cookie'
+import Image from 'next/image'
 
 const Login = () => {
 
@@ -54,7 +55,7 @@ const Login = () => {
         />
         <button className="btn login-btn">Login</button>
         <ToastContainer draggable={false} autoClose={2000} />
-        <Link href="/signup"><a><h6>Don't have an account?</h6></a></Link>
+        <Link href="/signup"><a><h6>{`Don't have an account?`}</h6></a></Link>
       </form>
     </>
   )

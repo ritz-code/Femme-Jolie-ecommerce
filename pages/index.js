@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import baseUrl from '../helpers/baseUrl'
+import Image from 'next/image'
 
 const Home = ({ products }) => {
 
@@ -8,7 +9,10 @@ const Home = ({ products }) => {
     return (
       <div className="image-card" key={product._id}>
         <div className="card-image-div">
-          <img src={product.mediaUrl} />
+          <Image 
+            src={product.mediaUrl} 
+            alt="Cute dress"
+          />
           <span className="card-title">{product.name}</span>
         </div>
         <div className="cost-delivery-div">

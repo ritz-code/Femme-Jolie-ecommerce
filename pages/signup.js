@@ -42,7 +42,7 @@ const Signup = () => {
   return (
     <>
       <form className="signup-container container" onSubmit={(e) => userSignup(e)}>
-        <div className="signup-icon"><i class="far fa-3x fa-user-circle"></i></div>
+        <div className="signup-icon"><i className="far fa-3x fa-user-circle"></i></div>
         <input type="text" name="name" placeholder="Name"
           autoComplete="off"
           value={name}

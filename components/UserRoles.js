@@ -7,7 +7,7 @@ function UserRoles() {
     const { token } = parseCookies()
     useEffect(() => {
         fetchUsers()
-    }, [])
+    })
 
     /* fetch User data */
     const fetchUsers = async () => {
@@ -61,7 +61,7 @@ function UserRoles() {
                 <tbody>
                     {users.map(user => {
                         return (
-                            <tr>
+                            <tr key={user._id}>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td className="userrole" onClick={() => handleRole(user._id, user.role)}>{user.role}</td>

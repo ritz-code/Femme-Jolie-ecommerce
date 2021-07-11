@@ -2,6 +2,7 @@ import { parseCookies } from 'nookies'
 import Authenticated from '../helpers/Authenticated'
 import baseUrl from '../helpers/baseUrl'
 import UserRoles from '../components/UserRoles'
+import Image from 'next/image'
 
 const Account = ({ orders }) => {
     const cookie = parseCookies()
@@ -35,7 +36,7 @@ const Account = ({ orders }) => {
                 {
                     orders.map(order => {
                         return (
-                            <li className="orders-list">
+                            <li className="orders-list"  key={order._id}>
                                 <div className="orders-container">
                                     <h3>Order Placed: {getOrderDate(order.createdAt)}</h3>
                                     <div className="orders-content">
@@ -45,7 +46,10 @@ const Account = ({ orders }) => {
                                                     <>
                                                         <div className="order-grid">
                                                             <span className="order-image-div">
-                                                                <img src={item.product.mediaUrl} />
+                                                            <Image 
+                                                                src={item.product.mediaUrl}
+                                                                alt="Beautiful clothing"
+                                                            />
                                                             </span>
                                                             <h3 className="order-description">{item.product.name} X {item.quantity}</h3>
                                                         </div>
