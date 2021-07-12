@@ -34,7 +34,7 @@ const Home = ({ products }) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
   /* fetch products from Product DB */
   const res = await fetch(`${baseUrl}/api/products`)
@@ -44,16 +44,5 @@ export async function getServerSideProps(context) {
     props: { products: data },
   }
 }
-
-/*export async function getStaticProps(context) {
-
-  /* fetch products from Product DB */
-  /*const res = await fetch(`${baseUrl}/api/products`)
-  const data = await res.json()
-
-  return {
-    props: { products: data },
-  }
-}*/
 
 export default Home

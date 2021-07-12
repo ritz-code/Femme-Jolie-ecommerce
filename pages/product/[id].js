@@ -93,21 +93,9 @@ const Product = ({ product }) => {
     )
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getStaticProps({ params: { id } }) {
     /* individual product details request to API */
     const res = await fetch(`${baseUrl}/api/product/${id}`)
-    const data = await res.json()
-
-    return {
-        props: {
-            product: data
-        }
-    }
-}
-
-/*export async function getStaticProps({ params: { id } }) {
-    /* individual product details request to API */
-    /*const res = await fetch(`${baseUrl}/api/product/${id}`)
     const data = await res.json()
 
     return {
@@ -124,6 +112,6 @@ export async function getStaticPaths() {
         ],
         fallback: true
     }
-}*/
+}
 
 export default Product
