@@ -1,7 +1,5 @@
 import initDB from "../../helpers/initDB"
 import Cart from '../../models/Cart'
-import mongoose from 'mongoose'
-import jwt from 'jsonwebtoken'
 import Authenticated from '../../helpers/Authenticated'
 
 initDB()
