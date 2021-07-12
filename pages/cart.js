@@ -55,15 +55,15 @@ const Cart = ({ error, products }) => {
           return (
             <div className="cart-items" key={item._id}>
               <div className="cart-image image-container" >
-              <Image
-                src={item.product.mediaUrl}
-                alt="Beautiful clothing"
-                width={780}
-                height={1196}
-                layout="responsive"
-                quality={100}
-                className="image"
-              />
+                <Image
+                  src={item.product.mediaUrl}
+                  alt="Beautiful clothing"
+                  width={780}
+                  height={1196}
+                  layout="responsive"
+                  quality={100}
+                  className="image"
+                />
               </div>
               <div className="cart-details">
                 <div className="product-name">{item.product.name}</div>
