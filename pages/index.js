@@ -8,10 +8,15 @@ const Home = ({ products }) => {
   const productList = products.map(product => {
     return (
       <div className="image-card" key={product._id}>
-        <div className="card-image-div">
-          <Image 
-            src={product.mediaUrl} 
+        <div className="card-image-div image-container">
+          <Image
+            src={product.mediaUrl}
             alt="Cute dress"
+            width={780}
+            height={1196}
+            layout="responsive"
+            quality={100}
+            className="image"
           />
           <span className="card-title">{product.name}</span>
         </div>

@@ -36,7 +36,7 @@ const Account = ({ orders }) => {
                 {
                     orders.map(order => {
                         return (
-                            <li className="orders-list"  key={order._id}>
+                            <li className="orders-list" key={order._id}>
                                 <div className="orders-container">
                                     <h3>Order Placed: {getOrderDate(order.createdAt)}</h3>
                                     <div className="orders-content">
@@ -45,11 +45,16 @@ const Account = ({ orders }) => {
                                                 return (
                                                     <>
                                                         <div className="order-grid">
-                                                            <span className="order-image-div">
-                                                            <Image 
-                                                                src={item.product.mediaUrl}
-                                                                alt="Beautiful clothing"
-                                                            />
+                                                            <span className="order-image-div image-container">
+                                                                <Image
+                                                                    src={item.product.mediaUrl}
+                                                                    alt="Beautiful clothing"
+                                                                    width={780}
+                                                                    height={1196}
+                                                                    layout="responsive"
+                                                                    quality={100}
+                                                                    className="image"
+                                                                />
                                                             </span>
                                                             <h3 className="order-description">{item.product.name} X {item.quantity}</h3>
                                                         </div>

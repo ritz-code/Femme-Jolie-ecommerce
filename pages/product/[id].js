@@ -56,10 +56,15 @@ const Product = ({ product }) => {
         return (
             <div className="container-product" key={product._id}>
 
-                <div className="product-image-div">
+                <div className="product-image-div image-container">
                     <Image 
                         src={product.mediaUrl} 
-                        alt="Clothing or art?"
+                        alt="Dress?"
+                        width={780}
+                        height={1196}
+                        layout="responsive"
+                        quality={100}
+                        className="image"
                     />
                 </div>
 

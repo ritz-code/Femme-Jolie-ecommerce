@@ -8,7 +8,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import Image from 'next/image'
 
 const Cart = ({ error, products }) => {
- 
+
   const [cartProducts, setCartProducts] = useState(products)
   const { token } = parseCookies()
   const router = useRouter()
@@ -54,10 +54,17 @@ const Cart = ({ error, products }) => {
         {cartProducts.map(item => {
           return (
             <div className="cart-items" key={item._id}>
-              <Image 
-                src={item.product.mediaUrl} 
+              <div className="cart-image image-container" >
+              <Image
+                src={item.product.mediaUrl}
                 alt="Beautiful clothing"
+                width={780}
+                height={1196}
+                layout="responsive"
+                quality={100}
+                className="image"
               />
+              </div>
               <div className="cart-details">
                 <div className="product-name">{item.product.name}</div>
                 <h6>{item.quantity} x ${item.product.price}</h6>
@@ -149,7 +156,7 @@ export async function getServerSideProps(context) {
     }
   })
 
-  if(res.error){
+  if (res.error) {
     return {
       props: { error },
     }
