@@ -152,7 +152,8 @@ export async function getServerSideProps(context) {
     method: "GET",
     headers: {
       "Authorization": token,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "User-Agent": "*",
     }
   })
 
